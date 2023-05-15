@@ -22,7 +22,7 @@ Notes
 it may happen that the input string have leading, trailing whitespaces and more than a unique whitespace between two consecutive numbers
 For C: The result is freed.
  */
-package dificulty.kyu5;
+package difficulty.kyu5;
 
 import java.util.Comparator;
 import java.util.stream.Collectors;

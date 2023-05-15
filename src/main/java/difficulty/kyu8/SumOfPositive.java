@@ -6,7 +6,7 @@ Example [1,-4,7,12] => 1 + 7 + 12 = 20
 
 Note: if there is nothing to sum, the sum is default to 0.
  */
-package dificulty.kyu8;
+package difficulty.kyu8;
 
 import java.util.stream.IntStream;
 

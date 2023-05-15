@@ -21,7 +21,7 @@ Examples (input -> output:
 * 'R', [3, 2, 1, 2]      ->  [1, 2, 2, 3]
 * 'L', [1, 4, 5, 3, 5 ]  ->  [5, 5, 4, 3, 1]
  */
-package dificulty.kyu8;
+package difficulty.kyu8;
 
 import java.util.Arrays;
 import java.util.Collections;

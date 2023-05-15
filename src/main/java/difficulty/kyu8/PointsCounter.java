@@ -19,7 +19,7 @@ our team always plays 10 matches in the championship
 0 <= x <= 4
 0 <= y <= 4
 */
-package dificulty.kyu8;
+package difficulty.kyu8;
 
 public class PointsCounter {
     public static int points(String[] games) {

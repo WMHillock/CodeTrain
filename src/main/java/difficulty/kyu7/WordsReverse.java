@@ -6,7 +6,7 @@ Examples
 "This is an example!" ==> "sihT si na !elpmaxe"
 "double  spaces"      ==> "elbuod  secaps"
  */
-package dificulty.kyu7;
+package difficulty.kyu7;
 
 public class WordsReverse {
     public static String reverseWords(final String original) {

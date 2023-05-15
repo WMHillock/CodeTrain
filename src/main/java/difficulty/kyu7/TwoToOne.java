@@ -11,7 +11,7 @@ a = "abcdefghijklmnopqrstuvwxyz"
 longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
  */
 
-package dificulty.kyu7;
+package difficulty.kyu7;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
