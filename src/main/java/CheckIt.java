@@ -18,8 +18,8 @@ public class CheckIt {
             String katasName = countAllClassesFrom("difficulty.kyu" + i).toString();
             sumOfResults += kataCount;
 
-            System.out.println("*\n"
-                    + "Difficult kata - " + i + "\n" +
+            System.out.println("*\n" +
+                    "Difficult kata - " + i + "\n" +
                     "Kata's list: " + katasName + "\n" +
                     "Count:" + kataCount);
         }
