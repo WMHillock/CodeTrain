@@ -27,7 +27,7 @@ public class ParseFromTextToInt {
          */
         for(String incomeString : numStrArray) {
             String[] splitByDelim;
-            //Ищем дефис
+
             if(incomeString.contains("-")) {
                 splitByDelim = incomeString.split("-");
                 /*
