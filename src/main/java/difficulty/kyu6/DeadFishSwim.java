@@ -1,6 +1,6 @@
 package difficulty.kyu6;
 
-public class DdeadFishSwim {
+public class DeadFishSwim {
 
     public static int[] parse(String data) {
 
