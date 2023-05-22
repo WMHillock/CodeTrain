@@ -1,7 +1,6 @@
 package difficulty.kyu4;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class ParseFromTextToInt {
     public static void main(String[] args) {
@@ -20,7 +19,7 @@ public class ParseFromTextToInt {
         Косяк в том что нам нужно в некоторых цифрах
         вытащить несколько значений из словаря например
         fifteen - тут нужно вытащить fif - 5 и ten - 10
-        итого будет 5 + 10, но! пока поиск нескольких вариантов не реализован
+        итого будет 5 + 10, но! Пока поиск нескольких вариантов не реализован
         или в цикле асе проверится несколько раз ...
         Тогда нужно обратить внимание на порядок действий, потому как если мы первым
         вытащим ноль и умножим на hundred то мы получим некорректное значение
@@ -72,7 +71,7 @@ public class ParseFromTextToInt {
         wordsToIntDictionary.put("ele",11);
         wordsToIntDictionary.put("twel", 12);
 
-        //Множители и мультипликаторы
+        //Слагаемые и мультипликаторы
         wordsToIntDictionary.put("ty", 10);         //*10
         wordsToIntDictionary.put("ten", 10);        //+10
         wordsToIntDictionary.put("hund",100);       //*100
