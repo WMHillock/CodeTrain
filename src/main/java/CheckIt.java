@@ -1,6 +1,7 @@
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -27,6 +28,9 @@ public class CheckIt {
     }
 
     private static List<String> countAllClassesFrom(String packageName) {
+        List<String> uncountedClasses = new ArrayList<>();
+        uncountedClasses.add("Object");
+        uncountedClasses.add("Person");
         return new Reflections(packageName, new SubTypesScanner(false))
                 .getAllTypes()
                 .stream()
@@ -39,7 +43,7 @@ public class CheckIt {
                 })
                 .filter(Objects::nonNull)
                 .map(Class::getSimpleName)
-                .filter(a -> !a.contains("Object"))
+                .filter(a -> !uncountedClasses.contains(a))
                 .collect(Collectors.toList());
     }
 }
