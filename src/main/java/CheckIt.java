@@ -13,16 +13,16 @@ public class CheckIt {
 
     private static void myResults() {
         System.out.println("Today i have next results:");
+        StringBuilder str = new StringBuilder();
         int sumOfResults = 0;
         for(int i = 1; i < 9; i++) {
             int kataCount = countAllClassesFrom("difficulty.kyu" + i).size();
             String katasName = countAllClassesFrom("difficulty.kyu" + i).toString();
             sumOfResults += kataCount;
-
-            System.out.println("*\n" +
-                    "Difficult kata - " + i + "\n" +
-                    "Kata's list: " + katasName + "\n" +
-                    "Count:" + kataCount);
+            System.out.printf("*\nDifficult kata - %d\n" +
+                    "Kata's List: %s\n" +
+                    "Count: %d\n",
+                    i, katasName, kataCount);
         }
         System.out.println("*\nTotal solutions: " + sumOfResults);
     }

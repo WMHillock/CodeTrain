@@ -68,12 +68,13 @@ public class ParseFromTextToInt {
         wordsToIntDictionary.put("sev", 7);
         wordsToIntDictionary.put("eig", 8);
         wordsToIntDictionary.put("nin", 9);
+        wordsToIntDictionary.put("ten", 10);
         wordsToIntDictionary.put("ele",11);
         wordsToIntDictionary.put("twel", 12);
 
         //Слагаемые и мультипликаторы
         wordsToIntDictionary.put("ty", 10);         //*10
-        wordsToIntDictionary.put("ten", 10);        //+10
+        wordsToIntDictionary.put("teen", 10);       //+10
         wordsToIntDictionary.put("hund",100);       //*100
         wordsToIntDictionary.put("thous", 100);     //*1000
         wordsToIntDictionary.put("mil", 1_000_000); //*1_000_000
