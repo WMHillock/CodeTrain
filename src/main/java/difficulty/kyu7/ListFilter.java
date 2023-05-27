@@ -18,7 +18,7 @@ public class ListFilter {
     }
     public static List<Object> filterList(final List<Object> list) {
         return list.stream()
-                .filter(str -> str instanceof String)
+                .filter(str -> !(str instanceof String))
                 .toList();
     }
 }
