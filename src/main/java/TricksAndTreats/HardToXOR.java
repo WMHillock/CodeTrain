@@ -28,7 +28,6 @@ public class HardToXOR {
         for (int num : nums) {
             xor ^= num;
         }
-        System.out.println("Отсутствует - " + xor);
         return xor;
     }
 
