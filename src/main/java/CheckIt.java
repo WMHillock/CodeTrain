@@ -1,51 +1,45 @@
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class CheckIt {
+    private static final String DIFFICULTY_PREFIX = "difficulty.kyu";
+    private static final Set<String> EXCLUDED_CLASSES = Set.of("Object", "Person");
+
     public static void main(String[] args) {
         myResults();
     }
 
     private static void myResults() {
-        System.out.println("Today i have next results:");
-        StringBuilder str = new StringBuilder();
+        System.out.println("Today I have the following results:");
+        StringBuilder output = new StringBuilder();
         int sumOfResults = 0;
-        for(int i = 1; i < 9; i++) {
-            int kataCount = countAllClassesFrom("difficulty.kyu" + i).size();
-            String katasName = countAllClassesFrom("difficulty.kyu" + i).toString();
-            sumOfResults += kataCount;
-            System.out.printf("*\nDifficult kata - %d\n" +
-                    "Kata's List: %s\n" +
-                    "Count: %d\n",
-                    i, katasName, kataCount);
+        for (int i = 1; i < 9; i++) {
+            Set<String> katas = countAllClassesFrom(DIFFICULTY_PREFIX + i);
+            String katasName = katas.toString();
+            sumOfResults += katas.size();
+            output.append(String.format("*%nDifficult kata - %d%nKata's List: %s%nCount: %d%n",
+                    i, katasName, katas.size()));
         }
-        System.out.println("*\nTotal solutions: " + sumOfResults);
+        output.append(String.format("*%nTotal solutions: %d%n", sumOfResults));
+        System.out.print(output);
     }
 
-    private static List<String> countAllClassesFrom(String packageName) {
-        List<String> uncountedClasses = new ArrayList<>();
-        uncountedClasses.add("Object");
-        uncountedClasses.add("Person");
+    private static Set<String> countAllClassesFrom(String packageName) {
         return new Reflections(packageName, new SubTypesScanner(false))
                 .getAllTypes()
                 .stream()
                 .map(name -> {
                     try {
-                        return Class.forName(name);
+                        return ClassLoader.getSystemClassLoader().loadClass(name);
                     } catch (ClassNotFoundException e) {
                         return null;
                     }
                 })
-                .filter(Objects::nonNull)
+                .filter(clazz -> clazz != null && !EXCLUDED_CLASSES.contains(clazz.getSimpleName()))
                 .map(Class::getSimpleName)
-                .filter(a -> !uncountedClasses.contains(a))
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
     }
 }
-
-
